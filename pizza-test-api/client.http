@@ -1,0 +1,45 @@
+@baseUrl = http://localhost:4000
+@id= {{create_pizza_orders.response.body.id}}
+
+# @name fetch_sizes
+GET {{baseUrl}}/sizes
+Content-Type: application/json
+
+###
+
+# @name fetch_ingredients
+GET {{baseUrl}}/ingredients
+Content-Type: application/json
+
+###
+
+# @name create_pizza_orders
+POST {{baseUrl}}/pizza-orders/create
+Content-Type: application/json
+
+ {
+    "costumerName": "John Doe",
+    "sizeId": "1",
+    "ingredientIds": ["1", "2"]
+ }
+
+###
+
+# @name fetch_pizza_orders
+GET {{baseUrl}}/pizza-orders
+Content-Type: application/json
+
+###
+
+# @name fetch_pizza_order_by_id
+GET {{baseUrl}}/pizza-orders/{{id}}
+Content-Type: application/json
+
+###
+
+# @name health
+GET {{baseUrl}}/health
+Content-Type: application/json
+
+###
+

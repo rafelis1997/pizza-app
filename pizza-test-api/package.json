@@ -1,0 +1,41 @@
+{
+  "name": "pizza-test",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run src/use-cases",
+    "test:watch": "vitest src/use-cases",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "dayjs": "^1.11.19",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^25.0.1",
+    "@vitest/coverage-v8": "^4.0.15",
+    "@vitest/ui": "^4.0.15",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.0.15"
+  }
+}
