@@ -1,0 +1,31 @@
+services:
+  pizza-test-front:
+    container_name: pizza-test-front
+    build:
+      context: ./pizza-test-front
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - VITE_API_URL=http://pizza-test-api:4000
+    depends_on:
+      - pizza-test-api
+    networks:
+      - pizza-test-net
+    restart: unless-stopped
+
+  pizza-test-api:
+    container_name: pizza-test-api
+    build:
+      context: ./pizza-test-api
+    ports:
+      - 4000:4000
+    environment:
+      - NODE_ENV=production
+    networks:
+      - pizza-test-net
+    restart: unless-stopped
+
+networks:
+  pizza-test-net:
+    driver: bridge
