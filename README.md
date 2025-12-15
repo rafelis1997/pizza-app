@@ -80,7 +80,5 @@ The included `docker-compose.yaml` builds both services and sets `VITE_API_URL` 
 ```bash
 # API tests
 cd pizza-test-api && npm test
-
-# Frontend tests
-cd pizza-test-front && npm test
 ```
+
